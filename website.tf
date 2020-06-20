@@ -1,3 +1,8 @@
+terraform {
+  backend "local" {
+    path = "/home/ubuntu/terraformState/web/terraform.tfstate"
+  }
+}
 
 ####################################################################
 # On recherche la derniere AMI créée avec le Name TAG PackerAnsible-Apache
@@ -14,6 +19,8 @@ data "aws_ami" "selected" {
   }
   most_recent = true
 }
+
+
 
 # On recupere les ressources reseau
 ## VPC

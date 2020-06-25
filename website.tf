@@ -1,6 +1,6 @@
 terraform {
   backend "local" {
-    path = "/home/ubuntu/terraformState/web/terraform.tfstate"
+    path = "/home/ubuntu/terraformState/birintha/web/terraform.tfstate"
   }
 }
 

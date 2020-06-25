@@ -1,9 +1,3 @@
-terraform {
-  backend "local" {
-    path = "/home/ubuntu/terraformState/web/terraform.tfstate"
-  }
-}
-
 provider "aws" {
   region = "eu-west-1"
 }

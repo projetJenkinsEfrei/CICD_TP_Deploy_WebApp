@@ -1,6 +1,11 @@
+variable "env" {
+  type    = string
+  default = "dev"
+}
+
 terraform {
   backend "local" {
-    path = "/home/ubuntu/terraformState/birintha/web/terraform.tfstate"
+    path = "/home/ubuntu/terraformState/${var.env}/web/terraform.tfstate"
   }
 }
 
@@ -9,11 +14,6 @@ provider "aws" {
 }
 
 
-
-variable "env" {
-  type    = string
-  default = "dev"
-}
 ####################################################################
 # On recherche la derniere AMI créée avec le Name TAG PackerAnsible-Apache
 data "aws_ami" "selected" {

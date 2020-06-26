@@ -5,7 +5,6 @@ variable "env" {
 
 terraform {
   backend "local" {
-    path = "/home/ubuntu/terraformState/${var.env}/web/terraform.tfstate"
   }
 }
 
@@ -24,7 +23,7 @@ data "aws_ami" "selected" {
   }
   filter {
     name   = "tag:Name"
-    values = ["Packer-Ansible"]
+    values = ["Packer-Ansible-${var.env}"]
   }
   most_recent = true
 }

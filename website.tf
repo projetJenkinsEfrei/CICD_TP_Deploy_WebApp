@@ -11,7 +11,6 @@ provider "aws" {
 
 variable "env" {
   type    = string
-  default = "dev"
 }
 ####################################################################
 # On recherche la derniere AMI créée avec le Name TAG PackerAnsible-Apache
@@ -24,7 +23,7 @@ data "aws_ami" "selected" {
   }
   filter {
     name   = "tag:Name"
-    values = ["Packer-Ansible"]
+    values = ["Packer-Ansible-${var.env}"]
   }
   most_recent = true
 }

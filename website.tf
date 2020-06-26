@@ -1,6 +1,5 @@
 variable "env" {
   type    = string
-  default = "dev"
 }
 
 terraform {

@@ -1,3 +1,7 @@
+variable "env" {
+  type    = string
+}
+
 terraform {
   backend "local" {
   }
@@ -8,10 +12,6 @@ provider "aws" {
 }
 
 
-
-variable "env" {
-  type    = string
-}
 ####################################################################
 # On recherche la derniere AMI créée avec le Name TAG PackerAnsible-Apache
 data "aws_ami" "selected" {

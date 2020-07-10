@@ -3,7 +3,7 @@ variable "env" {
 }
 
 terraform {
-  backend "local" {
+  backend "s3" {
   }
 }
 
